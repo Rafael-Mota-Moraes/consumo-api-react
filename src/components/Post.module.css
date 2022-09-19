@@ -1,0 +1,22 @@
+.post {
+  width: 200px;
+  padding: 1rem;
+  background-color: #ddd;
+  border-radius: 0.5rem;
+  height: 300px;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+}
+
+.post:hover {
+  transform: scale(105%);
+}
+
+.title {
+  font-weight: 400;
+  padding-bottom: 0.5rem;
+}
+
+.body {
+  padding-top: 0.5rem;
+}
