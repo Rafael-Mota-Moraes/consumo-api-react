@@ -1,9 +1,9 @@
 .post {
-  width: 200px;
+  width: 250px;
   padding: 1rem;
   background-color: #ddd;
   border-radius: 0.5rem;
-  height: 300px;
+  height: 350px;
   cursor: pointer;
   transition: all ease-in-out 0.3s;
 }
@@ -15,8 +15,14 @@
 .title {
   font-weight: 400;
   padding-bottom: 0.5rem;
+  font-size: 1.3rem;
 }
 
 .body {
   padding-top: 0.5rem;
+}
+
+.img {
+  width: 100%;
+  max-height: 200px;
 }

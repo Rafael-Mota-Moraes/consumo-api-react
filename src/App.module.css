@@ -1,0 +1,4 @@
+.main {
+  /* 65px e 50px são as alturas do header e do footer */
+  min-height: calc(100vh - 65px - 50px);
+}

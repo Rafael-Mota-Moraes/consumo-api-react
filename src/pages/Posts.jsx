@@ -7,7 +7,12 @@ export default function Posts({ postsArray }) {
     <div className={styles.postContainer}>
       {postsArray.map((post) => (
         <Link to={`/${post.id}`}>
-          <Post title={post.title} body={post.body} key={post.id} />
+          <Post
+            title={post.title}
+            body={post.body}
+            key={post.id}
+            imageUrl={post.url}
+          />
         </Link>
       ))}
     </div>
