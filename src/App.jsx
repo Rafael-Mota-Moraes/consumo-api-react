@@ -25,12 +25,10 @@ function App() {
   }, []);
 
   const filteredPosts = posts.filter((post) => {
-    /* 
-      filtra o título do post e adiciona uma chave com a url da foto no array de posts 
-    */
+    /* filtra o título do post e adiciona uma chave com a url da foto no array de posts */
     return (
       post.title.toLowerCase().includes(searchValue) &&
-      (post.url = photos[post.id].url)
+      (post.url = photos[post.id]?.url)
     );
   });
 

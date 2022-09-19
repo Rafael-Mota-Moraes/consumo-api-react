@@ -6,14 +6,16 @@ export default function Posts({ postsArray }) {
   return (
     <div className={styles.postContainer}>
       {postsArray.map((post) => (
-        <Link to={`/${post.id}`}>
-          <Post
-            title={post.title}
-            body={post.body}
-            key={post.id}
-            imageUrl={post.url}
-          />
-        </Link>
+        <div key={post.id}>
+          <Link to={`/${post.id}`}>
+            <Post
+              title={post.title}
+              body={post.body}
+              id={post.id}
+              imageUrl={post.url && post.url}
+            />
+          </Link>
+        </div>
       ))}
     </div>
   );
