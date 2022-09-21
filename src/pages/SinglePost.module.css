@@ -9,3 +9,23 @@
   height: 300px;
   margin: 1rem;
 }
+
+.editButton,
+.deleteButton {
+  margin: 1rem;
+  font-size: 1rem;
+  padding: 0.5em 1rem;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.deleteButton {
+  background-color: #c70000;
+  color: white;
+}
+
+.editButton {
+  background-color: #3178c6;
+  color: white;
+}

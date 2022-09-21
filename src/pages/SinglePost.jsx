@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "./SinglePost.module.css";
 
 export default function SinglePost() {
   const [post, setPost] = useState();
 
+  const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
@@ -12,6 +13,14 @@ export default function SinglePost() {
       .then((resp) => resp.json())
       .then((json) => setPost(json));
   }, [id]);
+
+  async function deletePost() {
+    await fetch(`http://localhost:3000/posts/${id}`, {
+      method: "DELETE"
+    });
+
+    navigate("/");
+  }
 
   return (
     post && (
@@ -27,6 +36,15 @@ export default function SinglePost() {
         )}
 
         <p>{post.body}</p>
+
+        <div>
+          <button onClick={deletePost} className={styles.deleteButton}>
+            Deletar Post
+          </button>
+          {/* <button onClick={deletePost} className={styles.editButton}>
+            Editar Post
+          </button> */}
+        </div>
       </div>
     )
   );
