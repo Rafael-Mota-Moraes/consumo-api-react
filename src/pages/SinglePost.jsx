@@ -4,30 +4,28 @@ import styles from "./SinglePost.module.css";
 
 export default function SinglePost() {
   const [post, setPost] = useState();
-  const [postPhoto, setPostPhoto] = useState();
 
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    fetch(`http://localhost:3000/posts/${id}`)
       .then((resp) => resp.json())
       .then((json) => setPost(json));
-
-    fetch(`https://jsonplaceholder.typicode.com/photos/${id}`)
-      .then((resp) => resp.json())
-      .then((json) => setPostPhoto(json));
-  }, []);
+  }, [id]);
 
   return (
-    post &&
-    postPhoto && (
+    post && (
       <div className={styles.container}>
         <h1>{post.title}</h1>
-        <img
-          src={postPhoto.url}
-          alt={post.title}
-          className={styles.postImage}
-        />
+
+        {post.imgUrl && (
+          <img
+            src={post.imgUrl}
+            alt={post.title}
+            className={styles.postImage}
+          />
+        )}
+
         <p>{post.body}</p>
       </div>
     )

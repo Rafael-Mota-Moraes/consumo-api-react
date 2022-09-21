@@ -8,6 +8,9 @@ export default function Header({ setSearchValue }) {
         <Link to={"/"}>Blog</Link>
       </h1>
       <div className={styles.inputContainer}>
+        <Link to={"/new-post"}>
+          <span className={styles.button}>Criar Novo Post</span>
+        </Link>
         <input
           className={styles.input}
           type="text"
