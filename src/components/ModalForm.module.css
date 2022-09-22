@@ -1,0 +1,33 @@
+.wraper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background: #ddd;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.button {
+  margin: 1rem;
+  font-size: 1rem;
+  padding: 0.5em 1rem;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+
+  background-color: #3178c6;
+  color: white;
+}

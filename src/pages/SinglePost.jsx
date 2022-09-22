@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import Input from "../components/Input";
+import ModalForm from "../components/ModalForm";
 import styles from "./SinglePost.module.css";
 
 export default function SinglePost() {
   const [post, setPost] = useState();
+  const [showModal, setShowModal] = useState(false);
 
   const navigate = useNavigate();
   const { id } = useParams();
@@ -25,6 +28,15 @@ export default function SinglePost() {
   return (
     post && (
       <div className={styles.container}>
+        {showModal && (
+          <ModalForm
+            id={post.id}
+            postTitle={post.title}
+            postBody={post.body}
+            postImgUrl={post.imgUrl}
+            closeModal={setShowModal}
+          />
+        )}
         <h1>{post.title}</h1>
 
         {post.imgUrl && (
@@ -41,9 +53,12 @@ export default function SinglePost() {
           <button onClick={deletePost} className={styles.deleteButton}>
             Deletar Post
           </button>
-          {/* <button onClick={deletePost} className={styles.editButton}>
+          <button
+            onClick={() => setShowModal(true)}
+            className={styles.editButton}
+          >
             Editar Post
-          </button> */}
+          </button>
         </div>
       </div>
     )
